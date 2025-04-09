@@ -1,0 +1,240 @@
+/* 구글 폰트(Poppins, Varela Round) 불러오기 */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+
+/* 모든 요소 초기화 (여백 제거 및 박스 모델 설정) */
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+/* 링크 스타일 초기화 */
+a, a:link, a:visited{color: inherit; text-decoration: none;}
+
+/* 리스트 기본 점 제거 */
+li{list-style: none;}
+
+/* 공통 컨테이너 너비 설정 및 가운데 정렬 */
+.container{width: 1140px; margin: 0 auto;}
+
+/* 헤더 고정 위치 및 스타일 지정 */
+header{position: fixed; color: white; top: 0; z-index: 1; width: 100%; padding: 1rem;}
+
+/* 스크롤 시 header에 active 클래스가 추가되면 배경에 반투명한 검정색을 입히고 페이드 인 애니메이션 적용 */
+header.active{background-color: rgba(0,0,0); animation: fadeIn 0.5s ease-in-out;}
+
+/* 페이드 인 애니메이션 정의 */
+@keyframes fadeIn{0%{opacity: 0;} 100%{opacity: 1;}}
+
+/* 헤더 내부 요소 정렬 */
+header .container{display: flex; justify-content: space-between; align-items: center; width: 100%;}
+
+/* 네비게이션 메뉴 가로 배치 */
+header nav ul{display: flex;}
+
+/* 네비게이션 항목 간격 설정 */
+header nav ul li{padding: 15px;}
+
+/* 헤더 버튼 공통 스타일 */
+header button{background: transparent; border: 0; cursor: pointer; color: white;}
+
+/* 헤더 로고 버튼 스타일 */
+header h1 button{font-size: 2rem; font-weight: bold;}
+
+/* 네비게이션 버튼 스타일 */
+header nav ul li button{font-size: 1.2rem; color: white;}
+
+/* 메인 배경 및 중앙 정렬 */
+main{width: 100%; height: 100vh; color: white; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,1)), url('images/me.jpg') center center;
+    background-size: cover; display: flex; justify-content: center; align-items: center; text-align: center;}
+
+/* 메인 소제목 스타일 */
+main h4{font-size: 2rem;}
+
+/* 메인 제목 스타일 및 폰트 적용 */
+main h2{font-size: 3.5rem; letter-spacing: 3px; margin: 2rem 0; letter-spacing: 3px; font-family: "Varela Round", sans-serif;}
+
+/* 메인 문단 스타일 */
+main p{max-width: 500px; margin: 0 auto; font-size: 1.25rem;}
+
+/* 이력서 다운로드 버튼 스타일 */
+main button.download{background-color: transparent; border: 3px solid white; border-radius: 20px; padding: 1rem 2rem; margin-top: 3rem; color: white; font-weight: bold; cursor: pointer;}
+
+/* 스크롤 유도 마우스 버튼 스타일 및 애니메이션 */
+main button.mouse{background-color: transparent; border: none; color: white; font-size: 2rem; position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); animation: upDown 1s ease-in-out infinite; cursor: pointer;}
+
+/* 마우스 버튼 상하 애니메이션 정의 */
+@keyframes upDown{0%{bottom: 1rem;} 50%{bottom: 1.5rem;} 100%{bottom: 1rem;}}
+
+/* 타이핑 효과 커서 스타일 */
+main h2 span::after{content: ""; height: 40px; width: 3px; background-color: #fff; display: inline-block; animation: blink .7s ease-in-out infinite;}
+
+/* 커서 깜빡이는 애니메이션 */
+@keyframes blink{0%{opacity: 1;} 100%{opacity: 0;}}
+
+/* 공통 섹션 폰트 스타일 */
+section{font-family: "Poppins", sans-serif;}
+
+/* 짝수 섹션 배경색 설정 */
+section:nth-child(2n){background-color: #f8f8f8;}
+
+/* 섹션 타이틀 여백 */
+section .title{margin-bottom: 3rem;}
+
+/* 섹션 소제목 스타일 */
+section .title h4{font-size: 1.35rem; color: #ed4848; position: relative;}
+
+/* 섹션 제목 스타일 */
+section .title h2{font-size: 3.5rem;}
+
+/* 섹션 설명문 스타일 */
+section .title p{font-size: 1.15rem;}
+
+/* float 해제 */
+section .about-self::after{content: ""; clear: both; display: block;}
+
+/* 자기소개 왼쪽 이미지 영역 */
+section .about-self .left{width: 50%; float: left;}
+
+/* 자기소개 이미지 최대 너비 제한 */
+section .about-self .left img{max-width: 100%;}
+
+/* 자기소개 오른쪽 텍스트 영역 */
+section .about-self .right{width: 50%; float: right; padding: 0 2rem;}
+
+/* 자기소개 소제목 */
+section .about-self .right h3{font-size: 2.25rem; margin-bottom: 1rem;}
+
+/* 강조 텍스트 색상 */
+section .about-self .right strong{color: #ed4848;}
+
+/* 자기소개 본문 텍스트 */
+section .about-self .right p{font-size: 1.15rem; margin: 1rem 0;}
+
+/* SNS 아이콘 크기 및 간격 */
+section .about-self .right .social a{font-size: 2.5rem; margin-right: 0.2rem;}
+
+/* float 해제 */
+section .do-me::after{content: ""; clear: both; display: block;}
+
+/* 내가 하는 일 카드 스타일 */
+section .do-me .do-inner{background-color: #fff; width: 30%; padding: 2rem; float: left; margin-right: 5%; cursor: pointer;}
+
+/* 마지막 카드 마진 제거 */
+section .do-me .do-inner:last-child{margin-right: 0;}
+
+/* 카드 아이콘 스타일 */
+section .do-me .do-inner .icon i{font-size: 2.5rem; color: #ff6a6a;}
+
+/* 카드 텍스트 제목 */
+section .do-me .do-inner .content h3{font-size: 2rem; margin: 1rem 0;}
+
+/* 카드 본문 */
+section .do-me .do-inner .content p{font-size: 1.15rem;}
+
+/* 카드 호버 효과 (배경/글자색 변경) */
+section .do-me .do-inner:hover{background-color: lightcoral; color: white;}
+
+/* 아이콘 색상 반전 */
+section .do-me .do-inner:hover i{color: white;}
+
+/* 고정 배경 이미지 섹션 */
+.bg{background: url('images/background.jpg') center center; background-size: cover; background-attachment: fixed; height: 650px;}
+
+/* float 해제 */
+section.portfolio::after{content: ""; clear: both; display: block;}
+
+/* 포트폴리오 카드 스타일 */
+section.portfolio .portfolio-inner{background-color: #f8f8f8; width: 30%; margin-right: 5%; padding: 1rem 1rem 1.5rem 1rem; float: left; margin-bottom: 3rem; border: 1px solid #ccc;}
+
+/* 포트폴리오 마지막 카드 마진 제거 */
+section.portfolio .portfolio-inner:nth-child(3n){margin-right: 0;}
+
+/* 포트폴리오 이미지 */
+section.portfolio .portfolio-inner img{width: 100%; display: flex;}
+
+/* 포트폴리오 카테고리 색상 */
+section.portfolio .portfolio-inner strong{color: #ff6a6a; margin: 0.5rem 0; display: flex;}
+
+/* 포트폴리오 제목 */
+section.portfolio .portfolio-inner h3{font-size: 1.75rem;}
+
+/* float 해제 */
+section.contact .contact-me::after{content: ""; clear: both; display: block;}
+
+/* 연락처 좌측 카드 영역 */
+section.contact .contact-me .left{width: 30%; float: left;}
+
+/* 연락처 우측 폼 영역 */
+section.contact .contact-me .right{float: left; width: 65%; margin-left: 5%;}
+
+/* 연락처 카드 스타일 */
+section.contact .contact-me .left .card{border: 1px solid #ccc; padding: 1rem; display: flex; align-items: center; margin-bottom: 1.25rem;}
+
+/* 카드 아이콘 스타일 */
+section.contact .contact-me .left .card .icon i{font-size: 2rem; margin-right: 15px;}
+
+/* 폼 전체 스타일 */
+section.contact .contact-me .right{float: left; width: 65%; margin-left: 5%; margin-bottom: 2rem; border: 1px solid #ccc; padding: 1rem;}
+
+/* 폼 그룹 간격 */
+section.contact .contact-me .right .form-group{margin-bottom: 1.25rem;}
+
+/* 입력 필드 라벨 */
+section.contact .contact-me .right .form-group label{display: block; margin-bottom: 0.85rem;}
+
+/* 입력 필드 스타일 */
+section.contact .contact-me .right .form-group input{padding: 0.625rem; width: 100%; outline: none; border: 1px solid #ccc; border-radius: 10px;}
+
+/* 입력 필드 포커스 스타일 */
+section.contact .contact-me .right .form-group input:focus{border: 1px solid #719ECE;}
+
+/* 텍스트 영역 스타일 */
+section.contact .contact-me .right .form-group textarea{height: 300px; width: 100%; resize: none; border: 1px solid #ccc;}
+
+/* 텍스트 영역 포커스 스타일 */
+section.contact .contact-me .right .form-group textarea:focus{outline: none; border: 1px solid #719ECE; box-shadow: 0 0 10px #719ECE;}
+
+/* 전송 버튼 스타일 */
+section.contact .contact-me .right button{width: 100%; padding: 1rem; background-color: #f78b00; border: none; color: white;}
+
+/* 반응형: 1140px 이하 */
+@media screen and (max-width:1140px) {
+    main .container{width: 992px;}
+    section .container{width: 600px;}
+    section .about-self .left{width: 100%; margin-bottom: 1.5rem;}
+    section .about-self .right{width: 100%; padding: 0;}
+    section .do-me .do-inner{width: 48%; margin-bottom: 1.5rem; margin-right: 0;}
+    section .do-me .do-inner:nth-child(2n+1){margin-right: 4%;}
+    section .portfolio-me .portfolio-inner{width: 48%; margin-right: 0;}
+    section .portfolio-me .portfolio-inner:nth-child(2n+1){margin-right: 4%;}
+    section.contact .contact-me .left{width: 100%;}
+    section.contact .contact-me .right{width: 100%; margin-left: 0;}
+}
+
+/* 반응형: 992px 이하 */
+@media screen and (max-width:992px) {
+    html{font-size: 14px;}
+    main .container{width: 768px;}
+    section .portfolio-me .portfolio-inner{width: 100%;}
+}
+
+/* 반응형: 768px 이하 */
+@media screen and (max-width:768px) {
+    html{font-size: 13px;}
+    main .container{width: 576px;}
+    section .container{width: 400px;}
+    section .do-me .do-inner{width: 100%; margin-right: 0;}
+}
+
+/* 반응형: 576px 이하 */
+@media screen and (max-width:576px) {
+    html{font-size: 12px;}
+    main .container{width: 400px;}
+    section .container{width: 360px;}
+}
+
+/* 반응형: 400px 이하 */
+@media screen and (max-width:400px) {
+    html{font-size: 11px;}
+    main .container{width: 320px;}
+    section .container{width: 320px;}
+    main h4{font-size: 1.5rem;}
+    section .title h2{font-size: 3rem;}
+}
